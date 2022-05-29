@@ -1,0 +1,56 @@
+/*
+SCSS Functions
+
+Useful functions and other helpers.
+*/
+
+/**
+ * Strip Unit
+ *
+ * Removes the SCSS unit from the provided number.
+ *
+ * Source: https://css-tricks.com/snippets/sass/strip-unit-function/
+ *
+ */
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
+/**
+ * Pixel-to-rem
+ *
+ * Utility function which allows a developer to provide a pixel value, and have
+ * it converted to a rem value. Useful when pulling values out of a design document,
+ * where the developer needs to convert those values to rem units (font-sizes,
+ * spacing, line height, etc).
+ *
+ * Example: `font-size: pxr(32px) => font-size: 2rem`
+ *
+ * @param  pixels $px    The pixel value
+ * @param  pixels $base: $font-size-root The value of a rem unit, in pixels. Defaults to Bootstrap's value.
+ * @return rem        The provided pixel value converted to rems
+ */
+@function pxr($px, $base: $font-size-root) {
+    @return (strip-unit($px) / strip-unit($base)) + 0rem;
+}
+
+
+ /**
+Calculate unitless line-height
+
+Take the pixel based line-height and divide it by the pixel font-size to get the right unitless number
+
+Example: line-height: lheight(22px, 32px);
+
+@param  pixels $font-size  The pixel font size
+@param  pixels $line-height: The pixel line height
+
+*/
+
+@function lheight($font-size, $line-height) {
+   @return $line-height / $font-size;
+}

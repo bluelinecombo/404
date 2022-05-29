@@ -1,0 +1,72 @@
+/*
+Position Mixins
+
+Mixins which provide help with positioning elements.
+*/
+
+/**
+ * Position Center (X-axis & Y-axis)
+ *
+ * Aligns an element perfectly in the center of the closest ancestor w/ a position
+ * that will intercept `position: absolute`.
+ */
+@mixin position-center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/**
+ * Position Center (X-axis)
+ *
+ * Aligns the element on the x-axis, using absolute positioning and translate
+ * transform, giving and perfectly centered element.
+ */
+@mixin position-center-x() {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/**
+ * Position Center (Y-axis)
+ *
+ * Aligns the element on the Y-axis, using absolute positioning and translate
+ * transform, giving and perfectly centered element.
+ */
+@mixin position-center-y() {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/**
+ * Full expand
+ *
+ * Makes child element expand to the viewport width inside a set width parent
+
+Usage: 
+
+ <div class="parent-container" style="width: 750px; margin: 0 auto;">
+    <div class="full-child-container">
+    </div>
+</div>
+
+.full-child-container {
+    @include full-expand();
+}
+
+*/
+
+@mixin full-expand() {
+    width: 100vw;
+    left: 50%;
+    margin-left: -50vw;
+    position: relative;
+}
+
+
+
+
+

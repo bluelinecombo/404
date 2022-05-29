@@ -1,0 +1,83 @@
+/*
+Miscellaneous Mixins
+
+When there aren't enough mixins of a specific category, they'll exist in this
+file. As the number of mixins of a specific category increase, they should
+be moved into their own file.
+*/
+
+/**
+ * headings()
+ *
+ * Provides a convenient way to target all heading element and BS helper classes.
+ *
+ * Usage:
+ *
+ * ```
+ * .content {
+ *     @headings {
+ *         color: red;
+ *     }
+ * }
+ * ```
+ */
+@mixin headings() {
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        @content;
+    }
+}
+
+/**
+ * protect-img()
+ *
+ * Adds styling to an image that's meant to "protect" it from a background that
+ * matches the background of the image. This is mainly useful for CMSs, where a
+ * client might upload an image with a white background, which is displayed on a
+ * white background. Usually doesn't end up looking good.
+ *
+ * Usage:
+ * ```
+ * .content img {
+ *     @include protect-img();
+ * }
+ * ```
+ */
+@mixin protect-img {
+    border: 1px solid $light-gray;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+/*--------------------*\
+Zero out margin and padding
+\*--------------------*/
+%zero {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin zero {
+    @extend %zero;
+}
+
+@mixin zero-list {
+  /*--------------------*\
+    Zero out margin and padding along with
+    list style.
+  \*--------------------*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

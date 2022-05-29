@@ -1,0 +1,97 @@
+/*
+Layout/Structure Styles
+*/
+
+
+/*
+Site Wrapper
+
+Wraps the entire contents of the site, including the header, content, and
+footer areas. It should not contain the <script>, <link>, etc elements that
+generally exist at the bottom of the page.
+
+This class will be useful in the following situations, where you have to manipulate
+the entire contents at once, like preventing scrolling with `overflow-y: hidden`.
+
+Example situations:
+- A modal box overlaid over the content, where the modal is injected outside
+of the .layout-site-wrapper element.
+- Mobile menu, which often is overlaid over the entire content.
+- Off-screen navs, where the entire site content needs to be shifted when the
+nav is open.
+*/
+.layout-site-wrapper {
+    position: relative;
+}
+
+/*
+Layout Wrapper
+
+Generally used to wrap different sections of a page, and usually contains a
+.layout-container or .container(-fluid) as a child. They are very useful for
+designs which have "zebra striped" sections of content, where a background image
+or color extends across the entire viewport. The .layout-wrapper would receive
+the background, while the .layout-container or .container(-fluid) would constrain
+its content to the desired content width.
+*/
+.layout-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+/*
+Layout Container
+
+Constrains its contents to the $content-width, providing a consistent width
+across all the header, footer, and content areas.
+
+This class has nothing to do with Bootstrap's grid .container or .container-fluid
+classes. It's mainly for width control.
+*/
+.layout-container {
+    position: relative;
+    width: $content-width;
+    max-width: 100%;
+    @include margin-center;
+
+    &:after {
+        @include clearfix();
+    }
+}
+
+.layout-header {}
+
+.layout-logo {
+    display: inline-flex;
+
+    a {
+        display: block;
+        width: 137px;
+        height: 30px;
+        background: url(/assets/img/structure/logo-MadPow-white.svg) no-repeat;
+        @include margin-y(1.5rem);
+    }
+
+}
+
+.layout-main {
+    @include padding-y(4px, 30px);
+}
+
+.inner-content {
+
+    @include gte(xl) {
+        min-height: 600px;
+        max-width: 1180px;
+        box-shadow: 3px 3px 15px 5px rgba(0,0,0,.15);
+    }
+
+
+}
+
+.layout-pre-footer {}
+
+.layout-footer {}
+
+.post-footer {}
+

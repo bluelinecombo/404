@@ -1,0 +1,14 @@
+/*
+Base or Foundational Styles
+*/
+
+html {
+}
+
+body {
+    font-family: $font-family-base;
+    color: $body-color;
+    // -webkit-font-smoothing: antialiased;
+    // -moz-osx-font-smoothing: grayscale;
+}
+

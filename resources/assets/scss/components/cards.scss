@@ -1,0 +1,70 @@
+/*
+Cards
+*/
+
+
+
+/*
+    Global .card component variation
+*/
+
+.card {
+    box-shadow: 0 0 3px 1px rgba(0,0,0,.1);
+
+
+    /*
+        Content-specific variation Example:
+        On the resources page use this style for the cards 
+    */
+    body.resources & {
+        box-shadow: none;
+        border: solid 1px $gray-100;
+    }
+
+}
+
+
+
+
+/*
+    Global .card-deck component variation
+*/
+.card-deck {
+
+    .card {
+
+        .card-icon i {
+            color: $primary;
+        }
+
+        .card-body {
+            /* 
+                The card function actually applies the $card-spacer-x value for the padding on all   sides so we're applying it here because we don't want to increase the x-padding.
+            */
+            @include padding-y($card-spacer-y);
+        }
+
+        .card-text {
+            font-size: 14px;
+
+            @include lte(lg) {
+
+                br {
+                    display: none;
+                }
+
+            }
+
+        }
+
+        .btn {
+
+            @include gte(lg) {
+                min-width: 160px;
+            }
+
+        }
+
+    }
+
+} 

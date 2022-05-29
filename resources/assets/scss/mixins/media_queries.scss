@@ -1,0 +1,77 @@
+/*
+Media Query Mixins
+*/
+
+/**
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+
+ * Media query shortcut for selecting screens greater than or equal to the requested
+ * Bootstrap breakpoint.
+ *
+ * @param  string $size A BS media query name, e.g sm, md, lg, etc
+ */
+@mixin gte($size) {
+    @include media-breakpoint-up($size) {
+        @content;
+    }
+}
+
+/**
+ * Media query shortcut for selecting screens less than the requested Bootstrap
+ * breakpoint.
+ *
+ * @param  string $size A BS media query name, e.g sm, md, lg, etc
+ */
+@mixin lte($size) {
+    @include media-breakpoint-down($size) {
+        @content;
+    }
+}
+
+// --- Backward compatibility --- //
+
+@mixin mq-gte($size) {
+    @include gte($size);
+}
+
+@mixin mq-lt($size) {
+    @include lte($size);
+}
+
+
+/**
+ *
+ * Supplemental media query mixin and queries. Add more as needed.
+ *
+ */
+
+  //  xs: 0,
+  // sm: 576px,
+  // md: 768px,
+  // lg: 992px,
+  // xl: 1200px
+
+@mixin mq($point) {
+    @if $point == gt-xxl {
+        @media (min-width: 1440px) { @content; }
+    }
+    @else if $point == lg-xl { 
+        @media (min-width: 1024px) { @content; }
+    }
+    @else if $point == md-lg { 
+        @media (min-width: 900px) { @content; }
+    }
+    @else if $point == lt-md { 
+        @media (max-width: 767px) { @content; }
+    }
+    @else if $point == gt-md-lt-lg { 
+        @media (min-width: 768px) and (max-width: 991px) { @content; }
+    }
+    @else if $point == gt-md-lt-xl { 
+        @media (min-width: 768px) and (max-width: 1199px) { @content; }
+    }
+}

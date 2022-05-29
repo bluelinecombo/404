@@ -1,0 +1,55 @@
+/*
+Spacing Mixins
+
+Mixins which provide spacing conveniences.
+*/
+
+/**
+ * X-axis margin
+ *
+ * Adds left and right margin in 1 line, without overriding top and bottom margin.
+ */
+@mixin margin-x($left, $right: $left) {
+    margin-left: $left;
+    margin-right: $right;
+}
+
+/**
+ * Y-axis margin
+ *
+ * Adds top and bottom margin in 1 line, without overriding left and right margin.
+ */
+@mixin margin-y($top, $bottom: $top) {
+    margin-top: $top;
+    margin-bottom: $bottom;
+}
+
+/**
+ * Center margin
+ *
+ * Adds center margin in 1 line, without overriding top and bottom margin.
+ */
+@mixin margin-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/**
+ * X-axis padding
+ *
+ * Adds left and right padding in 1 line, without overriding top and bottom padding.
+ */
+@mixin padding-x($left, $right: $left) {
+    padding-left: $left;
+    padding-right: $right;
+}
+
+/**
+ * Y-axis padding
+ *
+ * Adds top and bottom padding in 1 line, without overriding left and right padding.
+ */
+@mixin padding-y($top, $bottom: $top) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+}

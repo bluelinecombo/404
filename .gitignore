@@ -1,0 +1,42 @@
+# Annoying Files
+.AppleDouble
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Icon^M^M
+Thumbs.db
+ehthumbs.db
+.svn/
+
+# IDE/Editors
+/.idea
+/.phpstorm.meta.php
+/_ide_helper.php
+*.sublime-project
+*.sublime-workspace
+
+# Package managers
+/node_modules/
+/vendor/*
+.cache-loader
+
+# Log and database files
+*.log
+*.sql
+*.sqlite
+
+# Application
+/public/assets/dev/*
+/public/assets/build/*/*.map
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Always keep
+!.gitkeep
+
+# Temp
+/tmp

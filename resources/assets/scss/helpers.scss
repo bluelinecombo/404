@@ -1,0 +1,37 @@
+/*
+Helper Classes
+
+Useful helper classes. This file should not container functions or mixins.
+"Helpers" referrers to helper CSS classes.
+*/
+
+// --- Colors --- //
+
+@each $name, $color in $theme-colors {
+    .bg-color-#{$name} {
+        background-color: $color;
+    }
+
+    .color-#{$name} {
+        color: $color;
+    }
+}
+
+// --- Typography --- //
+
+@each $name, $size in $font-sizes {
+    .font-size-#{$name} {
+        font-size: $size;
+    }
+}
+
+// --- Miscellaneous --- //
+
+/*
+clickable
+
+Designates an element should show a "clickable" mouse cursor, on hover.
+*/
+.clickable {
+    cursor: pointer;
+}
