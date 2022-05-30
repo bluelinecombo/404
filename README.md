@@ -19,4 +19,4 @@ Boostrap(BS) 4.6
 - Nav link color does not pass the AAA color contrast. Changed it to a darker blue that passes AA
 - Phone icon is part of font awesome (FA) Pro, so I used a different phone icon available in FA free
 - Card grid spacing follows BS grid values, so the exact pixels values slightly differ from the design
-
+- The body font uses the BS sans-serif default since I can't sample what it is from a flat jpeg. The font included only pertains to the heading and button elements.
